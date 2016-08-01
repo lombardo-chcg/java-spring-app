@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+h1 {
+    padding: 10px;
+    background-color: plum;
+    color: white;
+}

@@ -1,7 +1,18 @@
 group 'com.lombardo'
 version '1.0-SNAPSHOT'
 
+buildscript{
+    repositories{
+        mavenCentral()
+    }
+    dependencies{
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-gradle-plugin
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.2.6.RELEASE'
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.5
 
@@ -10,6 +21,8 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
-    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.2.2.RELEASE'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.2.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+
 }

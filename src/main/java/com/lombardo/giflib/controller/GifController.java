@@ -1,11 +1,19 @@
 package com.lombardo.giflib.controller;
 
+import com.lombardo.giflib.data.GifRepo;
+import com.lombardo.giflib.model.Gif;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDate;
+
 @Controller
 public class GifController {
+    @Autowired
+    private GifRepo gifRepo;
 
     @RequestMapping(value = "/")
     public String listGifs() {
@@ -13,8 +21,9 @@ public class GifController {
     }
 
     @RequestMapping(value = "/gif")
-    @ResponseBody
-    public String singleGif() {
-        return "Gif FUUUUUUK, brah";
+    public String gifDetails(ModelMap modelMap) {
+        Gif gif = gifRepo.findByName("android-explosion");
+        modelMap.put("gif", gif);
+        return "gif-details";
     }
 }

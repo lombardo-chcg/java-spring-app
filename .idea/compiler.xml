@@ -19,8 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="gif-lib_main" target="1.5" />
-      <module name="gif-lib_test" target="1.5" />
+      <module name="gif-lib_main" target="1.8" />
+      <module name="gif-lib_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
